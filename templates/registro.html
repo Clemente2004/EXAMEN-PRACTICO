@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Nuevo Registro</h1>
+<form action="/registronuevo" method="POST" class="form form-control">
+    <div class="dato">
+        <label for="">Nombre</label>
+        <input type="text" name="nombre" placeholder="Ingrese su nombre" required  class="form-control">
+    </div>
+    <div class="dato">
+        <label for="">categoria</label>
+        <input type="text" name="categoria" placeholder="Ingrese su categoria" required  class="form-control">
+    </div>
+    <div class="dato">
+        <label for="">Precio</label>
+        <input type="number" name="precio" placeholder="Ingrese el precio" required  class="form-control">
+    </div>
+    <div class="dato">
+        <label for="">Stock</label>
+        <input type="text" name="stock" placeholder="Ingrese el stock" required  class="form-control">
+    </div>
+    <div class="dato">
+        <input type="submit" name="guardar" value="Nuevo registro" required  class="btn btn-success">
+    </div>
+</form>
+
+{% endblock %}
