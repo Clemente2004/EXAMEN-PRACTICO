@@ -52,6 +52,14 @@ def registronuevo():
     conn.close()
     return redirect("/")
 
+@app.route("/editar/<int:id>")
+def editar(id):
+    conn = sqlite3.connect("inventario.db")
+    conn.row_factory = sqlite3.Row
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM productos WHERE id = ?",(id,))
+    datos = cursor.fetchone()
+    return render_template("editar.html",datos = datos)
 
 
 if __name__ == "__main__":
