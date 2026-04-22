@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<h1>Nuevo Registro</h1>
+<h1 style="text-align: center; font-family: Verdana, Geneva, Tahoma, sans-serif; font-weight: bolder; color: white;">ACTUALIZAR REGISTRO</h1>
 <form action="/actualizar" method="POST" class="form form-control">
     <input type="hidden" value="{{datos.id}}" name="id">
     <div class="dato">
@@ -22,7 +22,7 @@
         <input type="number" name="stock" value="{{datos.stock}}" required  class="form-control">
     </div>
     <div class="dato">
-        <input type="submit" name="guardar" value="Nuevo registro" required  class="btn btn-success mb-3">
+        <input type="submit" name="guardar" value="Actualizar" required  class="btn btn-success mb-3">
     </div>
 </form>
 

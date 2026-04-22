@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<h1>Tienda Tecnologica BYTE SOFT</h1>
+<h1 style="text-align: center; font-family: Verdana, Geneva, Tahoma, sans-serif; font-weight: bolder; color: white;">TIENDA TECNOLOGICA BYTE SOFT</h1>
 <a href="/registro" class="btn btn-success mb-3">Nuevo registro</a>
 <table class="table">
     <thead class="table-dark">
@@ -24,8 +24,8 @@
             <td>{{item.precio}} Bs.</td>
             <td>{{item.stock}} Unidades</td>
             <td>
-                <a href="/editar/{{item.id}}" class="btn btn-warning mb-3">Editar</a>
-                <a href="/eliminar/{{item.id}}" class="btn btn-danger mb-3">Eliminar</a>
+                <a href="/editar/{{item.id}}" class="btn btn-warning mb-1">Editar</a>
+                <a href="/eliminar/{{item.id}}" class="btn btn-danger mb-1">Eliminar</a>
             </td>
         </tr>
         {% endfor %}
