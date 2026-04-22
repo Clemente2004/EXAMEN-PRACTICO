@@ -61,6 +61,24 @@ def editar(id):
     datos = cursor.fetchone()
     return render_template("editar.html",datos = datos)
 
+@app.route("/actualizar",methods=['POST'])
+def actualizar():
+    id = request.form['id']
+    nombre = request.form['nombre']
+    categoria = request.form['categoria']
+    precio = request.form['precio']
+    stock = request.form['stock']
+    conn = sqlite3.connect("inventario.db")
+    cursor = conn.cursor()
+    cursor.execute(
+        """
+        UPDATE productos SET nombre = ?, categoria = ?, precio = ?, stock = ? WHERE id = ?
+        """,(nombre,categoria,precio,stock,id)
+    )
+    conn.commit()
+    conn.close()
+    return redirect("/")
+
 
 if __name__ == "__main__":
     app.run(debug=True)
