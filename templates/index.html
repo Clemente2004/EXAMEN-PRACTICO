@@ -16,17 +16,19 @@
         </tr>
     </thead>
     <tbody>
+        {% for item in productos %}
         <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>{{item.id}}</td>
+            <td>{{item.nombre}}</td>
+            <td>{{item.categoria}}</td>
+            <td>{{item.precio}} Bs.</td>
+            <td>{{item.stock}}Unidades</td>
             <td>
-                <a href="/editar/" class="btn btn-warning mb-3">Editar</a>
-                <a href="/eliminar/" class="btn btn-danger mb-3">Eliminar</a>
+                <a href="/editar/{{item.id}}" class="btn btn-warning mb-3">Editar</a>
+                <a href="/eliminar/{{item.id}}" class="btn btn-danger mb-3">Eliminar</a>
             </td>
         </tr>
+        {% endfor %}
     </tbody>
 </table>
 

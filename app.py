@@ -22,7 +22,12 @@ init_database()
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    conn = sqlite3.connect("inventario.db")
+    conn.row_factory = sqlite3.Row
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM productos")
+    productos = cursor.fetchall()
+    return render_template("index.html",productos=productos)
 
 @app.route("/registro")
 def registro():
